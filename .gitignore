@@ -4,6 +4,7 @@
 #*
 
 *.class
+doc/
 
 leipzig1M.txt
 UPC.csv
