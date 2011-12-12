@@ -4,7 +4,12 @@
 #*
 
 *.class
+bin/
 doc/
+
+.metadata/
+
+out.txt
 
 leipzig1M.txt
 UPC.csv

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="1-1-BasicProgModel"/>
+	<classpathentry kind="src" path="1-2-DataAbstraction"/>
+	<classpathentry kind="src" path="1-3-BagsQueuesStacks"/>
+	<classpathentry kind="src" path="1-4-AnalysisOfAlgorithms"/>
+	<classpathentry kind="src" path="1-5-UnionFind"/>
+	<classpathentry kind="lib" path="/Users/aistrate/Languages/Java/Sedgewick/AlgorithmsSedgewick/algs4.jar"/>
+	<classpathentry kind="lib" path="/Users/aistrate/Languages/Java/Sedgewick/AlgorithmsSedgewick/stdlib.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
