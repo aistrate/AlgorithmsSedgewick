@@ -1,0 +1,38 @@
+public String dayOfTheWeek() {
+        int totalDays = ((this.year - 2000) * 365 + (this.year - 2000) / 4) + this.day+1;//+1 is for the leap year of 2000 itself
+        if (this.month > 1) {
+            for (int i = this.month - 1; i > 0; i--) {
+                if (isLongMongh(i))
+                    totalDays += 31;
+                else if (isShortMonth(i))
+                    totalDays += 30;
+                else
+                    totalDays += isLeapYear(this.year) ? 29 : 28;
+            }
+        }
+        int dayOfWeek=(5+totalDays)%7;
+        return dayOfWeekName(dayOfWeek);
+
+    }
+
+    private String dayOfWeekName(int dayOfWeek){
+        switch (dayOfWeek){
+            case 0:
+                return "Sunday";
+            case 1:
+                return "Monday";
+            case 2:
+                return "Tuesday";
+            case 3:
+                return "Wednesday";
+            case 4:
+                return "Thursday";
+            case 5:
+                return "Friday";
+            case 6:
+                return "Saturday";
+            default:
+                return null;
+        }
+
+    }
