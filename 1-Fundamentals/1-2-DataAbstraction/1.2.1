@@ -1,0 +1,58 @@
+/*
+ I chose to convert all years that are less than 100 to 2000's. 
+*/
+class SmartDate {
+    private int month;
+    private int day;
+    private int year;
+
+    public SmartDate(int year, int month, int day) {
+        if (year < 0)
+            throw new DateTimeException("Date not in correct format");
+        else if (year == 0) this.year = 2000;
+        else if (year < 10) this.year = Integer.parseInt(String.format("200%d", year));
+        else if (year < 100) this.year = Integer.parseInt(String.format("20%d", year));
+        else if (year < 1000)
+            throw new DateTimeException("Date not in correct format");
+        else this.year = year;
+        if (month <= 0 || month > 12)
+            throw new DateTimeException("Date not in correct format");
+        else
+            this.month = month;
+        if ((day < 0) ||
+                (in(this.month, 1, 3, 5, 7, 8, 10, 12) && day > 31) ||
+                (in(this.month, 4, 6, 9, 11) && day > 30) ||
+                (this.month == 2 && ((isLeapYear(this.year) && day > 29) || (!isLeapYear(this.year) && day > 28))
+                ))
+            throw new DateTimeException("Date not in correct format");
+        else
+            this.day = day;
+    }
+    
+    //2000 is a leap year, so I chose it as an anchor point.
+     private boolean isLeapYear(int year) {
+        return (year - 2000) % 4 == 0;
+    }
+
+    private boolean isLongMongh(int month) {
+        return in(month, 1, 3, 5, 7, 8, 10, 12);
+    }
+
+    private boolean isShortMonth(int month) {
+        return in(month, 4, 6, 9, 11);
+    }
+
+    private <T> boolean in(T key, T... set) {
+        for (T element : set) {
+            if (key == element)
+                return true;
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+
+        return String.format("%d.%d.%d", this.day, this.month, this.year);
+    }
+ }
