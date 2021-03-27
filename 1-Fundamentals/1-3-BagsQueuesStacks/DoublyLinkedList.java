@@ -188,8 +188,8 @@ public class DoublyLinkedList<Item> implements Iterable<Item>
             node.parent = null;
             DoubleNode prev = node.prev,
                        next = node.next;
-            prev.next = node.next;
-            next.prev = node.prev;
+            prev.next = next;
+            next.prev = prev;
             N--;
             return node.item;
         }
